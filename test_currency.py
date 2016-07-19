@@ -1,4 +1,5 @@
-from currency import Currency, DifferentCurrencyCodeError
+from currency import Currency
+from currency import DifferentCurrencyCodeError
 from nose.tools import assert_raises
 
 def test_create_currency_with_amount_and_code():
@@ -56,7 +57,12 @@ def test_multiply_by_int():
     assert  curr1 * enter_number == (900, 'USD')
 
 def test_multiply_by_float():
-        curr1 = Currency(100, 'USD')
-        enter_number = 1.97
+    curr1 = Currency(100, 'USD')
+    enter_number = 1.97
 
-        assert  curr1 * enter_number == (197, 'USD')
+    assert  curr1 * enter_number == (197, 'USD')
+
+def test_currency_symbol():
+    curr1 = Currency('€5')
+
+    assert curr1 == (5, 'EUR')
