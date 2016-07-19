@@ -64,5 +64,6 @@ def test_multiply_by_float():
 
 def test_currency_symbol():
     curr1 = Currency('€5')
+    curr2 = Currency(5, 'EUR')
 
-    assert curr1 == (5, 'EUR')
+    assert curr1 == curr2
